@@ -5,6 +5,7 @@ import Column from '../Column/Column';
 import PropTypes from 'prop-types';
 import {settings} from '../../data/dataStore';
 import ReactHtmlParser from 'react-html-parser';
+import Creator from '../Creator/Creator';
 
 class List extends React.Component {
   state = {
@@ -13,7 +14,7 @@ class List extends React.Component {
 
   static propTypes = {
     title: PropTypes.node.isRequired,
-    children: PropTypes.node.isRequired,
+    children: PropTypes.node,
     imgSrc: PropTypes.string,
     description: PropTypes.node,
     columns: PropTypes.array,
@@ -38,6 +39,10 @@ class List extends React.Component {
           {this.state.columns.map(({key, ...columnProps}) => (
             <Column key={key} {...columnProps} />
           ))}
+        </div>
+
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
         </div>
       </section>
     )
