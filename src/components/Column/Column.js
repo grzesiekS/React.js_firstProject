@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Column.scss';
 import PropTypes from 'prop-types';
-import Card from '../Card/Card';
-import {settings} from '../../data/dataStore';
-import Creator from '../Creator/Creator';
+// import Card from '../Card/Card';
+// import {settings} from '../../data/dataStore';
+// import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
 
 class Column extends React.Component {
@@ -18,36 +18,22 @@ class Column extends React.Component {
       icon: PropTypes.string,
     }
 
-    addCard(title){
-      this.setState(state => (
-        {
-          card: [
-            ...state.card,
-            {
-              key: state.card.length ? state.card[state.card.length-1].key+1 : 0,
-              title,
-              icon: 'list-alt',
-              cards: [],
-            },
-          ],
-        }
-      ));
-    }
-
     render() {
+      const {title, icon} = this.props;
+
       return (
         <section className={styles.component}>
           <h3 className={styles.title}>
-            {this.props.title}
-            <span className={styles.icon}><Icon name={this.props.icon}/></span>
+            {title}
+            <span className={styles.icon}><Icon name={icon}/></span>
           </h3>
-          {this.state.card.map(({key, ...cardProps}) => (
+          {/* {this.state.card.map(({key, ...cardProps}) => (
             <Card key={key} {...cardProps}/>
           ))}
 
           <div className={styles.creator}>
             <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
-          </div>
+          </div> */}
         </section>
       );
     }
