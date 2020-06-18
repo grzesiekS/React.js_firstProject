@@ -11,7 +11,7 @@ const createActionName = name => `app/${reducerName}/${name}`;
 export const ADD_CARD = createActionName('ADD_CARD');
 
 // action creators
-export const createActionAddColumn = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_CARD });
+export const createActionAddCard = payload => ({ payload: { ...payload, id: shortid.generate() }, type: ADD_CARD });
 
 // reducer
 export default function reducer(state = [], action = {}) {
