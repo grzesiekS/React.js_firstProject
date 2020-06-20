@@ -1,5 +1,3 @@
-// import shortid from 'shortid';
-
 // selectors
 export const getSearchString = (state) => state.searchString;
 export const countAllCards = ({cards}) => cards.length;
@@ -19,7 +17,7 @@ export const createAction_changeSearchString = payload => ({ payload: payload, t
 export default function reducer(statePart = '', action = {}) {
   switch (action.type) {
     case CHANGE:
-      return [action.payload];
+      return action.payload;
     default:
       return statePart;
   }
