@@ -21,7 +21,7 @@ export default function reducer(state = [], action = {}) {
     case ADD_CARD:
       return [...state, action.payload];
     case MOVE_CARD:
-      return[...state, action.payload];
+      return [...state, action.payload];
     default:
       return state;
   }
