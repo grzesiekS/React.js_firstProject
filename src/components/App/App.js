@@ -10,10 +10,11 @@ class App extends React.Component {
     title: PropTypes.node,
     subtitle: PropTypes.node,
     lists: PropTypes.array,
+    moveCard: PropTypes.func,
   }
 
   render() {
-    const {title, subtitle, lists} = this.props;
+    const {title, subtitle, lists, moveCard} = this.props;
 
     const moveCardHandler = result => {
       if(
@@ -25,17 +26,18 @@ class App extends React.Component {
           result.destination.droppableId != result.source.droppableId
         )
       ){
-        console.log({
-          id: result.draggableId,
-          dest: {
-            index: result.destination.index,
-            columnId: result.destination.droppableId,
-          },
-          src: {
-            index: result.source.index,
-            columnId: result.source.droppableId,
-          },
-        });
+        // console.log({
+        //   id: result.draggableId,
+        //   dest: {
+        //     index: result.destination.index,
+        //     columnId: result.destination.droppableId,
+        //   },
+        //   src: {
+        //     index: result.source.index,
+        //     columnId: result.source.droppableId,
+        //   },
+        // });
+        moveCard(result);
       }
     };
 
