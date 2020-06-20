@@ -1,1 +1,1 @@
-web: npm run httpServer
+web: http-server dist
