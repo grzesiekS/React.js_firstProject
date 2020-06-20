@@ -1,1 +1,1 @@
-web: httpServer
+web: npm run httpServer
