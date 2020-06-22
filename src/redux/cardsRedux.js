@@ -18,8 +18,14 @@ export const createAction_moveCard = payload => ({ payload: { ...payload }, type
 // reducer
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
-    case ADD_CARD:
-      return [...state, action.payload];
+    case ADD_CARD: {
+      const {columnId} = action.payload;
+
+      /* [DONE] Get numbers of cards in selected column */
+      const cardCount = state.filter(card => card.columnId == columnId).length;
+
+      return [...state, {...action.payload, index: cardCount}];
+    }
     case MOVE_CARD: {
       //[IN PROGRESS]
       const {id, src, dest} = action.payload;
