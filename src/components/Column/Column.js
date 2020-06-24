@@ -27,6 +27,7 @@ class Column extends React.Component {
 
     render() {
       const {title, icon, cards, addCard, id} = this.props;
+      cards.sort((a, b) => a.index - b.index);
 
       return (
         <section className={styles.component}>

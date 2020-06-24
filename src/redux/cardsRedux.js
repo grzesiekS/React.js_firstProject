@@ -27,7 +27,7 @@ export default function reducer(state = [], action = {}) {
       return [...state, {...action.payload, index: cardCount}];
     }
     case MOVE_CARD: {
-      //[IN PROGRESS]
+      //[DONE]
       const {id, src, dest} = action.payload;
       const targetCard = state.filter(card => card.id == id)[0];
       const targetColumnCards = state.filter(card => card.columnId == dest.columnId).sort((a, b) => a.index - b.index);
