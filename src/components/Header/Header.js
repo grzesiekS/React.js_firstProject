@@ -13,8 +13,8 @@ class Header extends React.Component {
               <i className='fas fa-bug'></i>
             </Link>
             <nav>
-              <NavLink exact to='/'>Home</NavLink>
-              <NavLink exact to='/info'>Info</NavLink>
+              <NavLink exact to='/' activeClassName='active'>Home</NavLink>
+              <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
             </nav>
           </div>
         </Container>
