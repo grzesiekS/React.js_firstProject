@@ -155,6 +155,26 @@ export const infoContent = {
   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
 };
 
+export const faqContent = {
+  title: 'faq',
+  subtitle: 'Frequently Asked Question',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  qaa: [
+    {
+      question: 'question1',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
+    },
+    {
+      question: 'question2',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
+    },
+    {
+      question: 'question3',
+      answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
+    }, 
+  ],
+};
+
 const initialStoreData = {
   app: {...pageContents},
   lists: [...lists],
