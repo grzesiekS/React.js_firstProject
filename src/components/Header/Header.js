@@ -2,7 +2,7 @@ import React from 'react';
 import {NavLink, Link} from 'react-router-dom';
 import styles from './Header.scss';
 import Container from '../Container/Container';
-import { settings } from '../../data/dataStore';
+import { settings, navLinks } from '../../data/dataStore';
 
 class Header extends React.Component {
   render(){
@@ -10,13 +10,13 @@ class Header extends React.Component {
       <header className={styles.components}>
         <Container>
           <div className={styles.wrapper}>
-            <Link className={styles.logo} to='/'>
+            <Link className={styles.logo} to={navLinks.home.href}>
               <i className={settings.headerIcon}></i>
             </Link>
             <nav>
-              <NavLink exact to='/' activeClassName='active'>Home</NavLink>
-              <NavLink exact to='/info' activeClassName='active'>Info</NavLink>
-              <NavLink exact to='/faq' activeClassName='active'>FAQ</NavLink>
+              <NavLink exact to={navLinks.home.href} activeClassName='active'>{navLinks.home.name}</NavLink>
+              <NavLink exact to={navLinks.info.href} activeClassName='active'>{navLinks.info.name}</NavLink>
+              <NavLink exact to={navLinks.faq.href} activeClassName='active'>{navLinks.faq.name}</NavLink>
             </nav>
           </div>
         </Container>

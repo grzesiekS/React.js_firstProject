@@ -178,6 +178,21 @@ export const faqContent = {
   ],
 };
 
+export const navLinks = {
+  home: {
+    name: 'Home',
+    href: '/',
+  },
+  info: {
+    name: 'Info',
+    href: '/info',
+  },
+  faq: {
+    name: 'FAQ',
+    href: '/faq',
+  },
+};
+
 const initialStoreData = {
   app: {...pageContents},
   lists: [...lists],
