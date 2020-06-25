@@ -161,14 +161,17 @@ export const faqContent = {
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
   qaa: [
     {
+      key: 0,
       question: 'question1',
       answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
     },
-    {
+    { 
+      key: 1,
       question: 'question2',
       answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
     },
-    {
+    { 
+      key: 2,
       question: 'question3',
       answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis nisl feugiat, tempus nunc eget, scelerisque massa. In nunc libero, pretium id magna et, tristique convallis turpis. Maecenas eleifend, magna quis scelerisque varius, eros est elementum lectus, at viverra est leo tempus tortor.',
     }, 
