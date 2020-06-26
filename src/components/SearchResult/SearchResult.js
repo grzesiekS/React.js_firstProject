@@ -3,16 +3,16 @@ import PropTypes from 'prop-types';
 import styles from './SearchResult.scss'; 
 import Container from '../Container/Container';
 import Hero from '../Hero/Hero';
-// import Card from '../Card/Card';
 import {searchResultContent} from '../../data/dataStore';
+import Card from '../Card/Card';
 
 class SearchResult extends React.Component {
   static propTypes = {
-    searchString: PropTypes.string,
+    cards: PropTypes.array,
   }
 
   render() {
-    console.log(this);
+    const {cards} = this.props;
 
     return(
       <Container>
@@ -23,6 +23,9 @@ class SearchResult extends React.Component {
           </h3>
 
           <div className={styles.cards}>
+            {cards.map(cardData => (
+              <Card key={cardData.id} {...cardData} />
+            ))}
           </div>
         </section>
       </Container>
