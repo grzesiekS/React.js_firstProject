@@ -208,6 +208,7 @@ export const navLinks = {
 export const searchResultContent = {
   title: 'Search Result',
   image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+  icon: 'fas fa-search',
 };
 
 const initialStoreData = {
