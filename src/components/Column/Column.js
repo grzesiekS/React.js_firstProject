@@ -5,7 +5,7 @@ import Card from '../Card/Card';
 import {settings} from '../../data/dataStore';
 import Creator from '../Creator/Creator';
 import Icon from '../Icon/Icon';
-import {Droppable} from 'react-beautiful-dnd';
+// import {Droppable} from 'react-beautiful-dnd';
 
 class Column extends React.Component {
     state = {
@@ -26,7 +26,7 @@ class Column extends React.Component {
     }
 
     render() {
-      const {title, icon, cards, addCard, id} = this.props;
+      const {title, icon, cards, addCard} = this.props;
       cards.sort((a, b) => a.index - b.index);
 
       return (
@@ -36,7 +36,7 @@ class Column extends React.Component {
             <span className={styles.icon}><Icon name={icon}/></span>
           </h3>
           
-          <Droppable droppableId={id}>
+          {/* <Droppable droppableId={id}>
             {provided => (
               <div
                 className={styles.cards}
@@ -50,7 +50,13 @@ class Column extends React.Component {
                 {provided.placeholder}
               </div>
             )}
-          </Droppable>
+          </Droppable> */}
+
+          <div className={styles.cards}>
+            {cards.map(cardData => (
+              <Card key={cardData.id} {...cardData} />
+            ))}
+          </div>
 
           <div className={styles.creator}>
             <Creator text={settings.cardCreatorText} action={addCard}/>
