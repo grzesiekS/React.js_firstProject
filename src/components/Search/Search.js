@@ -21,8 +21,7 @@ class Search extends React.Component {
   }
 
   state = {
-    // eslint-disable-next-line react/prop-types
-    value: this.props.location.pathname.replace('/search/','') || '',
+    value: this.props.searchString || '',
   }
 
   handleChange(event){
