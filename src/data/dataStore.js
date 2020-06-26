@@ -205,6 +205,11 @@ export const navLinks = {
   },
 };
 
+export const searchResult = {
+  title: 'Search Result',
+  image: 'http://uploads.kodilla.com/bootcamp/fer/11.react/space.png',
+};
+
 const initialStoreData = {
   app: {...pageContents},
   lists: [...lists],
