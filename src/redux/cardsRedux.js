@@ -54,11 +54,6 @@ export default function reducer(state = [], action = {}) {
         // add card to targetColumn
         targetColumnCards.splice(dest.index, 0, targetCard);
 
-        console.log('sourceColumnCards:');
-        console.log(sourceColumnCards.map(card => `${card.index}, title: ${card.title}`));
-        console.log('targetColumnCards:');
-        console.log(targetColumnCards.map(card => `${card.index}, title: ${card.title}`));
-
         return state.map(card => {
           const targetColumnIndex = targetColumnCards.indexOf(card);
 
