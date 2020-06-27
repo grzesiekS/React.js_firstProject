@@ -10,24 +10,24 @@ const mapStateToProps = (state, props) => {
 
   /* [DONE] Filter columns by serched cards */
   const columns = state.columns.filter((columns) => {
-    return cards.some(cards => {
-      if(columns.id === cards.columnId) {
-        cards.listId = columns.listId;
-        cards.columnTitle = columns.title;
+    return cards.map(card => {
+      if(columns.id === card.columnId) {
+        card.listId = columns.listId;
+        card.columnTitle = columns.title;
       }
-      return columns.id === cards.columnId;
+      return columns.id === card.columnId;
     });
   });
 
   /* [DONE] filter lists by filtered coulmns */
   const lists = state.lists.filter(lists => {
-    return cards.some(cards => {
-      if(cards.listId === lists.id) {
-        cards.listTitle = lists.title;
-        cards.listDesc = lists.description;
-        cards.image = lists.image;
+    return cards.map(card => {
+      if(card.listId === lists.id) {
+        card.listTitle = lists.title;
+        card.listDesc = lists.description;
+        card.image = lists.image;
       }
-      return cards.listId === lists.id;
+      return card.listId === lists.id;
     });
   });
 
