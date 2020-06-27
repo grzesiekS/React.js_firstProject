@@ -15,10 +15,18 @@ const mapStateToProps = (state, props) => {
     });
   });
 
+  /* filter lists by filtered coulmns */
+  const lists = state.lists.filter(lists => {
+    return columns.some(columns => {
+      return columns.listId == lists.id;
+    });
+  });
+
   return{
     id,
     cards,
     columns,
+    lists,
   };
 };
 
