@@ -8,9 +8,17 @@ const mapStateToProps = (state, props) => {
   const id = shortid.generate();
   const cards = getCardsFromSearch(state, searchString);
 
+  /* [DONE] Filter columns by serched cards */
+  const columns = state.columns.filter((columns) => {
+    return cards.some(cards => {
+      return columns.id === cards.columnId;
+    });
+  });
+
   return{
     id,
     cards,
+    columns,
   };
 };
 
