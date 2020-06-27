@@ -16,7 +16,6 @@ class SearchResult extends React.Component {
 
   render() {
     const {cards, id, moveCard} = this.props;
-    console.log(cards);
 
     const moveCardHandler = result => {
       if(
@@ -42,6 +41,10 @@ class SearchResult extends React.Component {
       }
     };
 
+    cards.forEach(element => {
+      element.index = cards.indexOf(element);
+    });
+
     return(
       <Container>
         <Hero titleText={searchResultContent.title} imgSrc={searchResultContent.image} />
@@ -50,7 +53,6 @@ class SearchResult extends React.Component {
             <h3 className={styles.title}>
               <span className={styles.icon}><i className={searchResultContent.icon}></i></span>
             </h3>
-
             <Droppable droppableId={id}>
               {provided => (
                 <div 
