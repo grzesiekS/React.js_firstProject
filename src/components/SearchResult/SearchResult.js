@@ -4,8 +4,7 @@ import styles from './SearchResult.scss';
 import Container from '../Container/Container';
 import Hero from '../Hero/Hero';
 import {searchResultContent} from '../../data/dataStore';
-import {Droppable, DragDropContext} from 'react-beautiful-dnd';
-import Card from '../Card/Card';
+import ListLink from '../ListLink/ListLink';
 
 class SearchResult extends React.Component {
   static propTypes = {
@@ -15,58 +14,22 @@ class SearchResult extends React.Component {
   }
 
   render() {
-    const {cards, id, moveCard} = this.props;
+    const {cards} = this.props;
     console.log(this);
-
-    const moveCardHandler = result => {
-      if(
-        result.destination
-        &&
-        (
-          result.destination.index != result.source.index
-          ||
-          result.destination.droppableId != result.source.droppableId
-        )
-      ){
-        moveCard({
-          id: result.draggableId,
-          dest: {
-            index: result.destination.index,
-            columnId: result.destination.droppableId,
-          },
-          src: {
-            index: result.source.index,
-            columnId: result.source.droppableId,
-          },
-        });
-      }
-    };
 
     return(
       <Container>
         <Hero titleText={searchResultContent.title} imgSrc={searchResultContent.image} />
-        <DragDropContext onDragEnd={moveCardHandler}>
-          <section className={styles.component}>
-            <h3 className={styles.title}>
-              <span className={styles.icon}><i className={searchResultContent.icon}></i></span>
-            </h3>
-            <Droppable droppableId={id}>
-              {provided => (
-                <div 
-                  className={styles.cards}
-                  {...provided.droppableProps}
-                  ref={provided.innerRef}
-                >
-                  {cards.map(cardData => (
-                    <Card key={cardData.id} {...cardData} dragDisable={true}/>
-                  ))}
-
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </section>
-        </DragDropContext>
+        <section className={styles.component}>
+          <h3 className={styles.title}>
+            <span className={styles.icon}><i className={searchResultContent.icon}></i></span>
+          </h3>
+          <div className={styles.cards}>
+            {cards.map(cardData => (
+              <ListLink key={cardData.id} id={cardData.listId} title={cardData.listTitle} image={cardData.image} description={cardData.title + ' / ' + cardData.columnTitle} />
+            ))}
+          </div>
+        </section>
       </Container>
     );
   }
