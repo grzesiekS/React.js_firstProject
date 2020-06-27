@@ -41,10 +41,6 @@ class SearchResult extends React.Component {
       }
     };
 
-    cards.forEach(element => {
-      element.index = cards.indexOf(element);
-    });
-
     return(
       <Container>
         <Hero titleText={searchResultContent.title} imgSrc={searchResultContent.image} />
@@ -61,7 +57,7 @@ class SearchResult extends React.Component {
                   ref={provided.innerRef}
                 >
                   {cards.map(cardData => (
-                    <Card key={cardData.id} {...cardData} />
+                    <Card key={cardData.id} {...cardData} dragDisable={true}/>
                   ))}
 
                   {provided.placeholder}

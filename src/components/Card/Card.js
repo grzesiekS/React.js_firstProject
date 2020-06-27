@@ -8,13 +8,19 @@ class Card extends React.Component {
       title: PropTypes.string,
       id: PropTypes.string,
       index: PropTypes.number,
+      dragDisable: PropTypes.bool,
     }
 
+    static defaultProps = {
+      dragDisable: false,
+    }
+
+
     render() {
-      const {title, id, index} = this.props;
+      const {title, id, index, dragDisable} = this.props;
 
       return (
-        <Draggable draggableId={id} index={index}>
+        <Draggable draggableId={id} index={index} isDragDisabled={dragDisable}>
           {(provided) => (
             <article
               className={styles.component}
