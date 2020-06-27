@@ -7,18 +7,22 @@ const mapStateToProps = (state, props) => {
   const searchString = props.match.params.searchString;
   const id = shortid.generate();
   const cards = getCardsFromSearch(state, searchString);
+  const mergeArrays =[];
 
   /* [DONE] Filter columns by serched cards */
   const columns = state.columns.filter((columns) => {
     return cards.some(cards => {
+      if(columns.id === cards.columnId) {
+        mergeArrays.push({...columns,...cards});
+      }
       return columns.id === cards.columnId;
     });
   });
 
-  /* filter lists by filtered coulmns */
+  /* [DONE] filter lists by filtered coulmns */
   const lists = state.lists.filter(lists => {
     return columns.some(columns => {
-      return columns.listId == lists.id;
+      return columns.listId === lists.id;
     });
   });
 
@@ -27,6 +31,7 @@ const mapStateToProps = (state, props) => {
     cards,
     columns,
     lists,
+    mergeArrays,
   };
 };
 

@@ -16,6 +16,7 @@ class SearchResult extends React.Component {
 
   render() {
     const {cards, id, moveCard} = this.props;
+    console.log(this);
 
     const moveCardHandler = result => {
       if(
