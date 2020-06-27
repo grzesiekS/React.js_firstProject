@@ -1,8 +1,7 @@
 @import '../../styles/settings.scss';
 
 .component {
-  flex-shrink: 0;
-  width: calc(33% - 12px);
+  width: 100%;
   background: $color-light;
   margin: 0 auto;
   padding: ($base-size * 1.5);
