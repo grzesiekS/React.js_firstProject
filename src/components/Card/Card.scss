@@ -9,6 +9,15 @@
   border-radius: $radius;
 }
 
+.componentSearch {
+  position: relative;
+  background: $color-success;
+  border: 1px solid lighten($color-dark, 60%);
+  padding: $base-size;
+  margin: 0 0 $base-size 0;
+  border-radius: $radius;
+}
+
 .subtitle {
   margin: 0;
   text-align: center;
