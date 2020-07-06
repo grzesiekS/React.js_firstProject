@@ -9,21 +9,19 @@ class Card extends React.Component {
       id: PropTypes.string,
       index: PropTypes.number,
       dragDisable: PropTypes.bool,
+      searchedCard: PropTypes.bool,
     }
 
     static defaultProps = {
       dragDisable: false,
     }
 
-
-    render() {
-      const {title, id, index, dragDisable} = this.props;
-
+    searchedCardsRender(styleComponent, id, index, dragDisable, title) {
       return (
         <Draggable draggableId={id} index={index} isDragDisabled={dragDisable}>
           {(provided) => (
             <article
-              className={styles.component}
+              className={styleComponent}
               {...provided.draggableProps}
               {...provided.dragHandleProps}
               ref={provided.innerRef}
@@ -36,6 +34,16 @@ class Card extends React.Component {
         //   <p className={styles.subtitle}>{title}</p>
         // </article>
       );
+    }
+
+    render() {
+      const {title, id, index, dragDisable} = this.props;
+
+      if(this.props.searchedCard == true) {
+        return this.searchedCardsRender(styles.componentSearch, id, index, dragDisable, title);
+      } else {
+        return this.searchedCardsRender(styles.component, id, index, dragDisable, title);
+      }
     }
 }
 
