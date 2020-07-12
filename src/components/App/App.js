@@ -4,7 +4,7 @@ import Info from '../Info/Info';
 import MainLayout from '../MainLayout/MainLayout';
 import List from '../List/ListContainer';
 import {BrowserRouter, Route} from 'react-router-dom';
-import Faq from '../FAQ/FAQ';
+import Faq from '../Faq/Faq';
 import {AnimatedSwitch} from 'react-router-transition';
 import styles from './App.scss';
 import SearchResult from '../SearchResult/SearchResultContainer';
